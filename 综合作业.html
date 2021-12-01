@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>文说堂</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .header-wrap {
+            height: 50px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .logo {
+            height: 50px;
+            width: 50px;
+            float: left;
+        }
+
+        .logo img {
+            /* float: left; */
+            width: 50px;
+            height: 50px;
+        }
+
+        .p0 {
+            width: 100px;
+            height: 50px;
+            float: left;
+            line-height: 50px;
+            margin: 0 auto;
+        }
+
+        .search {
+            width: 800px;
+            height: 50px;
+            float: left;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        .s2 {
+            width: 35px;
+            height: 35px;
+            color: white;
+            background-color: red;
+            font-weight: bolder;
+            border: 0;
+        }
+
+        .user {
+            height: 50px;
+            float: right;
+        }
+
+        .hearder {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .box1 {
+            width: 1200px;
+            height: 30px;
+            margin: 0 auto;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #dcdfdc;
+        }
+
+        .head1 {
+            width: 130px;
+            height: 25px;
+            float: left;
+        }
+
+        .head1 a {
+            text-decoration: none;
+            font-size: 20px;
+            color: black;
+            font-weight: bolder;
+            text-align: center;
+            float: left;
+        }
+
+        .head1 a:hover {
+            text-decoration: none;
+            border-bottom: 3px solid red;
+        }
+
+        .nev0 {
+            margin-left: 100px;
+        }
+
+        .nev1 {
+            float: right;
+        }
+
+        .one {
+            width: 100%;
+            height: 400px;
+            margin: 50px 0 10px 0;
+            /* float: left; */
+        }
+
+        .oneone {
+            width: 150px;
+            height: 280px;
+            border: 1px solid rgba(240, 240, 240, 0.692);
+            margin-top: 50px;
+            float: left;
+        }
+
+        .oneoneone {
+            line-height: 40px;
+            width: 150px;
+            height: 40px;
+
+        }
+
+        .oneonetwo {
+            float: left;
+            width: 150px;
+        }
+
+        .nev2 a {
+            float: left;
+            width: 150px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .nve2 a {
+            text-decoration: none;
+            color: #353535;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .nev2 a:hover {
+            size: 20px;
+            color: #310bab;
+            border-bottom: 3px solid #372964;
+        }
+
+        #slideshow {
+            float: right;
+            width: 900px;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            margin-right: 100px;
+        }
+
+        #banner {
+            width: 900px;
+            height: 400px;
+        }
+
+        #pre {
+            position: absolute;
+            top: 150px;
+            /* left: 368px; */
+            width: 50px;
+            height: 100px;
+            font-size: 40px;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        #next {
+            position: absolute;
+            top: 150px;
+            left: 850px;
+            width: 50px;
+            height: 100px;
+            font-size: 40px;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        #imglist li {
+            position: absolute;
+            opacity: 0;
+        }
+
+        #dotlist {
+            position: absolute;
+            bottom: 30px;
+            width: 100px;
+            display: flex;
+            justify-content: space-between;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        #dotlist>li {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: rgb(117, 31, 31);
+            opacity: 0.3;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        #imglist>li.appear,
+        #dotlist>li.appear {
+            opacity: 1;
+        }
+
+        .two {
+            padding-top: 15px;
+            width: 1200px;
+            height: 500px;
+        }
+
+        .twoone {
+            margin: 0 auto;
+            width: 1200px;
+            text-align: center;
+            height: 30px;
+        }
+
+        .twotwo {
+            margin: 0 auto;
+            width: 1200px;
+            text-align: center;
+            height: 30px;
+        }
+
+        .p1 {
+            font-size: 30px;
+            font-family: "STXingkai";
+            font-weight: bolder;
+            color: green;
+        }
+
+        .p2 {
+            margin-top: 10px;
+            font-size: 30px;
+            font-family: "STCaiyun";
+            font-weight: bolder;
+            color: rgb(22, 95, 22);
+        }
+
+        .twothree {
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        .bar {
+            position: relative;
+            overflow: hidden;
+            width: 600px;
+            height: 350px;
+            border: 2px solid #FFFFCC;
+            box-shadow: 0 0 80px pink inset;
+        }
+
+        .bar p {
+            position: absolute;
+            left: 500px;
+            /* 强制文本在一行 */
+            white-space: nowrap;
+        }
+
+        .subs {
+            width: 1200px;
+            margin: 30px auto;
+            height: 500px;
+        }
+
+        .guide {
+            position: relative;
+            height: 57px;
+            line-height: 57px;
+            border-bottom: 2px solid black;
+        }
+
+        .right a {
+            float: right;
+            margin-right: 61px;
+            font-size: 20px;
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: rgba(165, 165, 165, 1);
+        }
+
+        .picture {
+            margin-right: 5px;
+            float: left;
+            position: relative;
+        }
+
+        .possition {
+            width: 390px;
+            height: 73px;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.4);
+            bottom: 5px;
+            line-height: 73px;
+        }
+
+        span.word5 {
+            color: white;
+            margin-left: 38px;
+        }
+
+        .left a {
+            text-decoration: none;
+            color: black;
+            font-size: 40px;
+            font-family: "STXingkai";
+            font-weight: bolder;
+            text-align: center;
+            float: left;
+        }
+
+        .left a:hover {
+            text-decoration: none;
+            color: red;
+        }
+
+        .last {
+            width: 1200px;
+        }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 500px;
+            right: 0px;
+            border: 3px solid sienna;
+            background-color: red;
+            color: white;
+            font-family: "楷体";
+            font-weight: bolder;
+            font-size: 15px;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-wrap">
+        <div class="logo"><img src="images/logo.png" alt=""></div>
+        <div class="title">
+            <p class="p0">文说堂</p>
+        </div>
+        <div class="search">
+            <form action="">
+                <input type="text" style="height: 28px;">
+                <input class="s2" type="button" value="🔍">
+            </form>
+        </div>
+        <div class="user">
+            <button>立即登录</button>
+            <button>立即注册</button>
+            <button>充值</button>
+        </div>
+    </div>
+    <div class="hearder">
+        <div class="box1">
+            <div class="head1"><a class="nev" href="#">首页</a></div>
+            <div class="head1"><a class="nev" href="#">书库</a></div>
+            <div class="head1"><a class="nev" href="#">分类</a></div>
+            <div class="head1"><a class="nev" href="#">完结</a></div>
+            <div class="head1"><a class="nev" href="#">排名</a></div>
+            <div class="head1"><a class="nev" href="#">频道</a></div>
+            <div class="head1 nev0"><a class="nev" href="#">移动端📱</a></div>
+            <div class="head1 nev1"><a class="nev" href="#">作者专区</a></div>
+        </div>
+    </div>
+    <div class="one">
+        <div class="oneone">
+            <div class="oneoneone">
+                <p
+                    style="font-size: 20px; font-weight: bolder;text-align: center; background-color: rgb(236, 236, 236); margin: 0;">
+                    作品分类</p>
+            </div>
+            <div class="oneonetwo">
+                <div class="nev2"><a href="#">古代言情</a></div>
+                <div class="nev2"><a href="#">现代言情</a></div>
+                <div class="nev2"><a href="#">青春校园</a></div>
+                <div class="nev2"><a href="#">游戏悬疑</a></div>
+                <div class="nev2"><a href="#">奇幻言情</a></div>
+                <div class="nev2"><a href="#">全部小说＜＜</a></div>
+            </div>
+        </div>
+        <div class="onetwo" id="slideshow">
+            <ul id="imglist">
+                <li><img id="banner" src="images/p1.jpeg" alt=""></li>
+                <li><img id="banner" src="images/p2.jpeg" alt=""></li>
+                <li><img id="banner" src="images/p3.jpeg" alt=""></li>
+                <li><img id="banner" src="images/p4.jpg" alt=""></li>
+                <li><img id="banner" src="images/p5.jpeg" alt=""></li>
+            </ul>
+            <ul id="dotlist">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+            <button id="pre">＜</button>
+            <button id="next">＞</button>
+        </div>
+    </div>
+    <div class="subs">
+        <div class="guide">
+            <div class="left"><a href="">热销榜</a></div>
+            <div class="right"><a href="">查看全部</a></div>
+        </div>
+        <div class="picture clear"><a href="#">
+                <img style="height: 400px;" src="books/三国演义.jpg" alt="picture"></a>
+            <div class="possition">
+                <span class="word5">《三国演义》</span>
+                <span class="word5">类型：古代、历史</span>
+            </div>
+        </div>
+        <div class="picture clear"><a href="#">
+                <img style="width: 390px; height: 400px;" src="books/亲爱的抛物线.jpg" alt="picture"></a>
+            <div class="possition">
+                <span class="word5">《亲爱的抛物线》></span>
+                <span class="word5">类型：剧情、恋爱</span>
+            </div>
+        </div>
+        <div class="picture clear"><a href="#">
+                <img style="width: 390px; height: 400px;" src="books/你的来电.jpg" alt="picture"></a>
+            <div class="possition">
+                <span class="word5">《你的来电》</span>
+                <span class="word5">类型：剧情、言情</span>
+            </div>
+        </div>
+    </div>
+    <div class="two">
+        <div class="twoone">
+            <p class="p1">如果您有建议</p>
+        </div>
+        <div class="twotwo">
+            <p class="p2">请在下方弹幕区留下您的留言</p>
+        </div>
+        <div class="twothree">
+            <div class="bar"></div>
+            <div class="bod">
+                <input id="msg" type="text">
+                <button id="send">发送</button>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="last">
+        <div>
+            <a href="#"><img src="images/jubao.jpg" alt=""></a>
+        </div>
+    </div>
+    <button id="myBtn">返回顶部</button>
+
+    <script>
+        //返回顶部
+        var myBtn = document.getElementById("myBtn");
+        window.onscroll = function () {
+            if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+                document.getElementById("myBtn").style.display = "block";
+            } else {
+                document.getElementById("myBtn").style.display = "none";
+            }
+        }
+        myBtn.onclick = function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+        //弹幕
+        var bar = document.getElementsByClassName('bar')[0];
+        var msg = document.getElementById('msg');
+        var send = document.getElementById('send');
+
+        send.onclick = function () {
+            var p = document.createElement('p');
+            p.innerHTML = msg.value;
+            p.style.top = Math.random() * 280 + 'px'
+            var left = 500;
+            var id = setInterval(function () {
+                left--;
+                p.style.left = left + 'px';
+                if (left < -p.clientWidth) {
+                    clearInterval(id);
+                    bar.removeChild(p);
+                }
+            }, 30)
+            bar.appendChild(p);
+        }
+        // 鼠标划上
+        var o = document.getElementsByClassName("nev")
+        for (var i = 0; i < o.length; i++) {
+            o[i].onmouseover = function () {
+                this.style.color = "red"
+            }
+            o[i].onmouseout = function () {
+                this.style.color = ""
+            }
+        }
+
+        // 轮播图
+        var slideShow = document.getElementById("slideshow");
+        var imgList = document.getElementById("imglist");
+        var imgs = imgList.children;
+        var dotList = document.getElementById("dotlist");
+        var dots = dotList.children;
+        var pre = document.getElementById("pre");
+        var next = document.getElementById("next");
+        var duration = 2000;
+        var Index = 0;
+        var count = imgList.children.length;
+        var timer;
+
+        window.onload = function () {
+            imgList.children[0].classList.add("appear");
+            dotList.children[0].classList.add("appear");
+
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].index = i;
+                dots[i].onclick = changeMe;
+            }
+
+            timer = setInterval(rotate, duration);
+
+            slideShow.onmouseover = function (event) {
+                clearInterval(timer);
+            };
+
+            slideShow.onmouseout = function (event) {
+                timer = setInterval(rotate, duration);
+            };
+
+            pre.onclick = preImg;
+            next.onclick = nextImg;
+        }
+
+        function change() {
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("appear");
+                imgs[i].classList.remove("appear");
+            }
+            dots[Index].classList.add("appear");
+            imgs[Index].classList.add("appear");
+        }
+
+        function rotate() {
+            Index++;
+            if (Index == count) {
+                Index = 0;
+            }
+            change();
+        }
+
+        function preImg() {
+            Index--;
+            if (Index < 0) {
+                Index = count - 1;
+            }
+            change();
+        }
+
+        function nextImg() {
+            Index++;
+            if (Index == count) {
+                Index = 0;
+            }
+            change();
+        }
+
+        function changeMe() {
+            Index = this.index;
+            change();
+        }
+
+    </script>
+</body>
+
+
+</html>
